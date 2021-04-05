@@ -1,7 +1,209 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <html>
+<head>
+
+<!-- Google fonts reference-->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap" rel="stylesheet">
+
+<!-- Connecting with D3 library-->
+<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+
+<style>
+
+/*Defining text stylings*/
+
+.primary-1 { fill: #9C0195 }
+.primary-2 { fill: #7C0777 }
+.primary-0 { fill: #640560 }
+.primary-3 { fill: #460043 }
+.primary-4 { fill: #290028 }
+
+.secondary-1-1 { fill: #D3013D }
+.secondary-1-2 { fill: #A70A37 }
+.secondary-1-0 { fill: #88072C }
+.secondary-1-3 { fill: #5F001B }
+.secondary-1-4 { fill: #380010 }
+
+.secondary-2-1 { fill: #4E0E9F }
+.secondary-2-2 { fill: #42127E }
+.secondary-2-0 { fill: #350E66 }
+.secondary-2-3 { fill: #230647 }
+.secondary-2-4 { fill: #14032A }
+
+.complement-1 { fill: #B9E201 }
+.complement-2 { fill: #95B30B }
+.complement-0 { fill: #789108 }
+.complement-3 { fill: #536600 }
+.complement-4 { fill: #313C00 }
+  
+body { background-color: #2b2b2b}
+
+#h1 {
+  font-size:30px;
+  margin:30px 0px 0px 20px;
+  color:#B9E201;
+  font-family:'Montserrat Alternates', sans-serif;
+  font-weight:300;
+}
+
+#link {
+	font-family:'Montserrat Alternates', sans-serif;
+  font-weight:200;
+  font-size:10px;
+	margin:5px 0px 0px 22px;
+  color:#B9E201;
+}
+
+a:link, a:visited, a:active {
+	text-decoration: none;
+  color:#B9E201;
+  border-bottom:1.5px dotted #B9E201;
+}
+
+</style>
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+<!-- Creating the headlines -->
+<p id="h1"> Colour check</p>
+<div id="link"> Viz | 
+<a href="https://slides.com/sandravizmad/data-visualization">Presentation</a> </div>
+
+<script>
+  
+//Margin conventions
+var m = {top:20, right:20, bottom:20, left:20}
+    w = 1200 - m.left - m.right,
+    h = 1200 - m.top - m.bottom;
+
+//Container
+var svg = d3.select("body")
+    .append("svg")
+    .attr("width", w + m.left + m.right)
+    .attr("height", h + m.top + m.bottom)
+    .append("g")
+		.attr("transform", `translate(${m.left}, ${m.top})`);
+  
+var multi=1.7;
+  
+svg.append("rect")
+		.attr("class", "primary-1")
+    .attr("x", 10)
+    .attr("y", 10)
+    .attr("width", 420*multi)
+    .attr("height", 420*multi);
+  
+svg.append("rect")
+		.attr("class", "primary-2")
+    .attr("x", 30)
+    .attr("y", 30)
+    .attr("width", 400*multi)
+    .attr("height", 400*multi);
+  
+svg.append("rect")
+		.attr("class", "primary-3")
+    .attr("x", 50)
+    .attr("y", 50)
+    .attr("width", 380*multi)
+    .attr("height", 380*multi);
+  
+svg.append("rect")
+		.attr("class", "primary-4")
+    .attr("x", 70)
+    .attr("y", 70)
+    .attr("width", 360*multi)
+    .attr("height", 360*multi);
+  
+svg.append("rect")
+		.attr("class", "secondary-2-1")
+    .attr("x", 90)
+    .attr("y", 90)
+    .attr("width", 320*multi)
+    .attr("height", 320*multi);
+  
+svg.append("rect")
+		.attr("class", "secondary-2-2")
+    .attr("x", 110)
+    .attr("y", 110)
+    .attr("width", 300*multi)
+    .attr("height", 300*multi);
+  
+svg.append("rect")
+		.attr("class", "secondary-2-3")
+    .attr("x", 130)
+    .attr("y", 130)
+    .attr("width", 280*multi)
+    .attr("height", 280*multi);
+  
+svg.append("rect")
+		.attr("class", "secondary-2-4")
+    .attr("x", 150)
+    .attr("y", 150)
+    .attr("width", 260*multi)
+    .attr("height", 260*multi);
+  
+svg.append("rect")
+		.attr("class", "secondary-1-1")
+    .attr("x", 170)
+    .attr("y", 170)
+    .attr("width", 220*multi)
+    .attr("height", 220*multi);
+  
+svg.append("rect")
+		.attr("class", "secondary-1-2")
+    .attr("x", 190)
+    .attr("y", 190)
+    .attr("width", 200*multi)
+    .attr("height", 200*multi);
+  
+svg.append("rect")
+		.attr("class", "secondary-1-3")
+    .attr("x", 210)
+    .attr("y", 210)
+    .attr("width", 180*multi)
+    .attr("height", 180*multi);
+  
+svg.append("rect")
+		.attr("class", "secondary-1-4")
+    .attr("x", 230)
+    .attr("y", 230)
+    .attr("width", 160*multi)
+    .attr("height", 160*multi);
+  
+svg.append("rect")
+		.attr("class", "complement-1")
+    .attr("x", 250)
+    .attr("y", 250)
+    .attr("width", 120*multi)
+    .attr("height", 120*multi);
+  
+svg.append("rect")
+		.attr("class", "complement-2")
+    .attr("x", 270)
+    .attr("y", 270)
+    .attr("width", 100*multi)
+    .attr("height", 100*multi);
+  
+svg.append("rect")
+		.attr("class", "complement-3")
+    .attr("x", 290)
+    .attr("y", 290)
+    .attr("width", 80*multi)
+    .attr("height", 80*multi);
+  
+svg.append("rect")
+		.attr("class", "complement-4")
+    .attr("x", 310)
+    .attr("y", 310)
+    .attr("width", 60*multi)
+    .attr("height", 60*multi);
+   
+</script>
+</body>
+</html>
+
+</script>
 </body>
 </html>
