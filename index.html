@@ -2,14 +2,12 @@
 <body>
 <script type="module">
 
-// Load the Observable runtime and inspector.
+<div id="observablehq-b70177d9"></div>
+<p>Credit: <a href="https://observablehq.com/@sandravizmad/personal-webpage">Sandravizz by Sandravizz</a></p>
+
+<script type="module">
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-
-// Your notebook, compiled as an ES module.
-import notebook from "https://api.observablehq.com/@jashkenas/my-neat-notebook.js?v=3";
-
-// Load the notebook, observing its cells with a default Inspector
-// that simply renders the value of each cell into the provided DOM node.
-new Runtime().module(notebook, Inspector.into(document.body));
+import define from "https://api.observablehq.com/@sandravizmad/personal-webpage.js?v=3";
+new Runtime().module(define, Inspector.into("#observablehq-b70177d9"));
 
 </script>
