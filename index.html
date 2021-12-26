@@ -2,13 +2,17 @@
 <html>
 <body>
 
-<div id="observablehq-b70177d9"></div>
-<p>Credit: <a href="https://observablehq.com/@sandravizmad/personal-webpage">Sandravizz by Sandravizz</a></p>
+<div id="observablehq-collection-d5617a2b"></div>
+<p>Credit: <a href="https://observablehq.com/@sandravizmad/sandravizz">DATAVIZ &amp; CO. by Sandra Becker</a></p>
 
 <script type="module">
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-import define from "https://api.observablehq.com/@sandravizmad/personal-webpage.js?v=3";
-new Runtime().module(define, Inspector.into("#observablehq-b70177d9"));
+import define from "https://api.observablehq.com/@sandravizmad/sandravizz.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "collection") return new Inspector(document.querySelector("#observablehq-collection-d5617a2b"));
+});
 </script>
+
+  
 </body>
 </html>
